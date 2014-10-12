@@ -4,6 +4,8 @@
 
 Available for free in the [Google Chrome Webstore](https://chrome.google.com/webstore/detail/oblique-strategies-tab/mgmdhihgmkhangpfokjdhfhjaiadpopd).
 
+![Screenshot](https://i.cloudup.com/HLhbCmxbDR.png)
+
 ## Development
 
 Prequisites:
