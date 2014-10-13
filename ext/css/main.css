@@ -1,12 +1,16 @@
 .svg-icon {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
 }
 .svg-icon circle,
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
   transition: all 200ms ease-in;
+}
+.chrome .svg-icon {
+  width: 3em;
+  height: 3em;
 }
 .svg-icon circle {
   stroke-width: 1;
@@ -54,7 +58,13 @@ body.dark {
 }
 .controls a {
   display: inline-block;
-  margin: 1em;
+  margin-left: 1.5em;
+  transition: color 300ms ease-in;
+  text-decoration: none;
+  color: #bababa;
+}
+.controls a:hover {
+  color: #111;
 }
 .controls a:hover .svg-icon path,
 .controls a:hover .svg-icon polygon,
@@ -64,6 +74,16 @@ body.dark {
 .controls a:hover .svg-icon circle {
   stroke: #111111;
 }
+.controls a.extension span {
+  position: relative;
+  top: -8px;
+}
+.chrome .controls a {
+  margin: 1em;
+}
+body.dark .controls a {
+  color: #888;
+}
 body.dark .controls a .svg-icon path,
 body.dark .controls a .svg-icon polygon,
 body.dark .controls a .svg-icon rect {
@@ -71,6 +91,9 @@ body.dark .controls a .svg-icon rect {
 }
 body.dark .controls a .svg-icon circle {
   stroke: #888888;
+}
+body.dark .controls a:hover {
+  color: #eaeaea;
 }
 body.dark .controls a:hover .svg-icon path,
 body.dark .controls a:hover .svg-icon polygon,

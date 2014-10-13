@@ -15,17 +15,32 @@
 
 .controls a {
   display: inline-block;
-  margin: 1em;
+  margin-left: 1.5em;
+  transition: color 300ms ease-in;
+  text-decoration: none;
+  color: #bababa;
 
   &:hover {
+    color: #111;
     .color-icons(#111);
+  }
+
+  &.extension span {
+    position: relative;
+    top: -8px;
   }
 }
 
+.chrome .controls a {
+  margin: 1em;
+}
+
 body.dark .controls a {
+  color: #888;
   .color-icons(#888);
 
   &:hover {
+    color: #eaeaea;
     .color-icons(#eaeaea);
   }
 }
