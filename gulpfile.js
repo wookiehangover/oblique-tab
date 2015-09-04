@@ -22,7 +22,7 @@ gulp.task('css', function() {
 })
 
 gulp.task('watch', function() {
-  var watchify = exec('npm run watch-pages');
+  var watchify = exec('npm run watch-js');
   process.on('exit', function(code) {
     watchify.kill(code);
   });
@@ -34,4 +34,4 @@ gulp.task('watch', function() {
   gulp.watch('assets/css/**/*.css', ['css']);
 });
 
-gulp.task('default', ['less', 'watch']);
+gulp.task('default', ['css', 'watch']);
