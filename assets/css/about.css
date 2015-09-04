@@ -19,7 +19,7 @@
   margin: auto;
   padding: 2em;
   background: #fff;
-  border: 1px solid #455A64;
+  border: 1px solid #B0BEC5;
   color: #455A64;
   width: 400px;
   opacity: 0;
@@ -49,13 +49,22 @@
 
 .about-modal .inner h2 small {
   font-weight: normal;
-  font-size: 0.625em;
+  font-size: 0.4em;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  padding: 2px 4px;
+  color: #AB47BC;
+  background-color: #F3E5F5;
 }
 
 .about-modal .inner hr {
   border-style: solid;
   margin: 1.5em 0;
   color: #B0BEC5;
+}
+
+.about-modal input[type="checkbox"] {
+  position: relative;
+  top: -2px;
 }
 
 body.dark .about-modal {
