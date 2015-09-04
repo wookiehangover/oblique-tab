@@ -1,0 +1,66 @@
+:root {
+  --light-base: #ECEFF1;
+  --light-text: #bababa;
+  --light-text-hover: #111;
+
+  --dark-base: #263238;
+  --dark-text: #888;
+  --dark-text-hover: #eaeaea;
+
+  --bg-transition: 400ms;
+}
+
+html, body {
+  height: auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Helvetica, arial, sans;
+  background: var(--light-base);
+  color: var(--dark-base);
+  margin: 0;
+  line-height: 1.5;
+  transition: background var(--bg-transition) ease-in-out;
+}
+
+body.dark {
+  background: var(--dark-base);
+  color: var(--light-base);
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  z-index: 1000;
+  position: relative;
+}
+
+.container h1 {
+  margin: auto;
+  font-size: 5rem;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 80%;
+  transition: color var(--bg-transition) ease-in-out;
+}
+
+img.bg {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity 1s ease-in;
+}
+
+img.bg.fade-in {
+  opacity: 0;
+}
+
+@import "icons.css";
+@import "controls.css";
+@import "about.css";
+

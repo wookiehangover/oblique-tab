@@ -4,7 +4,7 @@ var version = require('../../ext/manifest.json').version;
 function renderCard() {
   var card = ob.draw();
   var elem = document.getElementById('strategy');
-  elem.innerText = String(card);
+  elem.innerHTML = String(card);
 }
 
 function handleThemeClick() {

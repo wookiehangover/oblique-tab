@@ -1,0 +1,68 @@
+@media (max-width: 17em) {
+  .container h1 {
+    max-width: 100%;
+  }
+}
+
+.controls {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.controls a {
+  display: inline-block;
+  margin-left: 1.5rem;
+  transition: color 300ms ease-in;
+  text-decoration: none;
+  color: var(--light-text);
+}
+
+.controls a.extension span {
+  position: relative;
+  top: -0.5rem;
+}
+
+.controls a:hover {
+  color: var(--light-text-hover);
+}
+
+.controls a:hover .svg-icon path,
+.controls a:hover .svg-icon polygon,
+.controls a:hover .svg-icon rect {
+  fill: var(--light-text-hover);
+}
+
+.controls a:hover .svg-icon circle {
+  stroke: var(--light-text-hover);
+}
+
+body.dark .controls a {
+  color: var(--dark-text);
+}
+
+body.dark .svg-icon path,
+body.dark .svg-icon polygon,
+body.dark .svg-icon rect {
+  fill: var(--dark-text);
+}
+
+body.dark .svg-icon circle {
+  stroke: var(--dark-text);
+}
+
+body.dark .controls a:hover {
+  color: var(--dark-text-hover);
+}
+
+body.dark .controls a:hover .svg-icon path,
+body.dark .controls a:hover .svg-icon polygon,
+body.dark .controls a:hover .svg-icon rect {
+  fill: var(--dark-text-hover);
+}
+
+body.dark .controls a:hover .svg-icon circle {
+  stroke: var(--dark-text-hover);
+}
+

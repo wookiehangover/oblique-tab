@@ -1,0 +1,32 @@
+.svg-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.svg-icon circle,
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  transition: all 200ms ease-in;
+}
+
+.chrome .svg-icon {
+  width: 3em;
+  height: 3em;
+}
+
+.svg-icon circle {
+  stroke-width: 1;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: var(--light-text);
+}
+
+.svg-icon circle {
+  stroke:  var(--light-text);
+}
+
+
