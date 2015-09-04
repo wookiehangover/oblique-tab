@@ -1,0 +1,75 @@
+:root {
+  --link-highlight: #B3E5FC;
+}
+
+.about-modal {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255,255,255,0.9);
+  transform: translateY(100%);
+  transition: all 300ms ease-in-out;
+}
+
+.about-modal .inner {
+  margin: auto;
+  padding: 2em;
+  background: #fff;
+  border: 1px solid #455A64;
+  color: #455A64;
+  width: 400px;
+  opacity: 0;
+  transition: all 400ms ease-out;
+  border-radius: 4px;
+}
+
+.about-modal .inner p {
+  margin-bottom: 0;
+}
+
+.about-modal .inner h2 {
+  margin-top: 0;
+}
+
+.about-modal .inner a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 2px solid var(--link-highlight);
+  box-shadow: inset 0 -4px 0 var(--link-highlight);
+  transition: background 100ms ease-out;
+}
+
+.about-modal .inner a:hover {
+  background: var(--link-highlight);
+}
+
+.about-modal .inner h2 small {
+  font-weight: normal;
+  font-size: 0.625em;
+}
+
+.about-modal .inner hr {
+  border-style: solid;
+  margin: 1.5em 0;
+  color: #B0BEC5;
+}
+
+body.dark .about-modal {
+  background: rgba(0,0,0,0.75);
+}
+
+body.show-about .about-modal {
+  transform: translateY(0);
+}
+
+body.show-about .about-modal .inner {
+  opacity: 1;
+}
+
+body.show-about .container {
+  filter: blur(1px);
+}

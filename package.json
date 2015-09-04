@@ -2,16 +2,27 @@
   "name": "oblique-tab",
   "version": "1.0.0",
   "dependencies": {
-    "browserify": "^6.0.3",
-    "gulp": "^3.8.8",
-    "gulp-less": "^1.3.6",
-    "gulp-sourcemaps": "^1.2.4",
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "imagesloaded": "^3.1.8",
     "oblique-strategies": "^1.0.1",
-    "watchify": "^2.0.0"
+    "superagent": "^1.3.0",
+    "watchify": "^3.4.0"
   },
   "scripts": {
     "build-gh-pages": "browserify assets/js/pages.js -o main.js",
     "build-js": "browserify assets/js/main.js -o ext/js/main.js",
-    "watch-js": "watchify assets/js/main.js -o ext/js/main.js -v"
+    "watch-js": "watchify assets/js/main.js -o ext/js/main.js -v",
+    "watch-pages": "watchify assets/js/pages.js -o main.js -v"
+  },
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "cssnano": "^2.6.1",
+    "gulp-postcss": "^6.0.0",
+    "postcss-color-function": "^1.3.2",
+    "postcss-custom-properties": "^5.0.0",
+    "postcss-import": "^7.0.0"
   }
 }
