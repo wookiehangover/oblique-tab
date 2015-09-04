@@ -55,7 +55,7 @@ function setUnsplash() {
   var unsplash = localStorage.getItem('unsplash');
   var checkbox = document.querySelector('input[name="unsplash"]');
 
-  if (unsplash == true) {
+  if (unsplash == 'true') {
     setBackground();
     checkbox.setAttribute('checked', true);
   }
