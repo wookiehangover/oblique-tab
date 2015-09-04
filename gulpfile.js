@@ -4,14 +4,6 @@ var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 
-gulp.task('less', function() {
-  return gulp.src('assets/less/main.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(postcss([ require('autoprefixer') ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('ext/css'));
-});
 
 gulp.task('css', function() {
   return gulp.src('assets/css/main.css')
