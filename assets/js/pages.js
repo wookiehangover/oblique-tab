@@ -51,6 +51,21 @@ function updateVersion() {
   elem.innerText = 'v' + version;
 }
 
+function setBigHead() {
+  var unsplash = localStorage.getItem('big-head');
+  var checkbox = document.querySelector('input[name="bighead"]');
+
+  if (unsplash == 'true') {
+    document.body.classList.toggle('big-head')
+    checkbox.setAttribute('checked', true);
+  }
+
+  checkbox.addEventListener('change', function(e) {
+    localStorage.setItem('big-head', e.currentTarget.checked);
+    document.body.classList.toggle('big-head')
+  }, true);
+}
+
 function setUnsplash() {
   var unsplash = localStorage.getItem('unsplash');
   var checkbox = document.querySelector('input[name="unsplash"]');
@@ -78,10 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.toggle('dark');
   }
   setTimeout(function() {
+    renderCard();
     document.body.classList.add('ready');
   }, 1000);
-  renderCard();
   updateVersion();
+  setBigHead();
   setUnsplash();
   handleThemeClick();
   handleAboutClick();
