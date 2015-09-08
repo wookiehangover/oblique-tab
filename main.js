@@ -52,6 +52,21 @@ function updateVersion() {
   elem.innerText = 'v' + version;
 }
 
+function setBigHead() {
+  var unsplash = localStorage.getItem('big-head');
+  var checkbox = document.querySelector('input[name="bighead"]');
+
+  if (unsplash == 'true') {
+    document.body.classList.toggle('big-head')
+    checkbox.setAttribute('checked', true);
+  }
+
+  checkbox.addEventListener('change', function(e) {
+    localStorage.setItem('big-head', e.currentTarget.checked);
+    document.body.classList.toggle('big-head')
+  }, true);
+}
+
 function setUnsplash() {
   var unsplash = localStorage.getItem('unsplash');
   var checkbox = document.querySelector('input[name="unsplash"]');
@@ -79,31 +94,33 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.toggle('dark');
   }
   setTimeout(function() {
+    renderCard();
     document.body.classList.add('ready');
   }, 1000);
-  renderCard();
   updateVersion();
+  setBigHead();
   setUnsplash();
   handleThemeClick();
   handleAboutClick();
 });
 
 },{"../../ext/manifest.json":3,"./unsplash-background":2,"oblique-strategies":7}],2:[function(require,module,exports){
-var request = require('superagent');
-var imagesLoaded = require('imagesloaded');
+var request = require('superagent')
+var imagesLoaded = require('imagesloaded')
 
 function appendImage(src) {
-  var img = new Image();
-  img.src = src;
-  img.className = 'bg';
+  var img = new Image()
+  img.src = src
   imagesLoaded(img).on('done', function() {
-    document.body.appendChild(img);
-    img.className = 'bg fade-in';
+    var div = document.createElement('div')
+    div.className = 'bg fade-in'
+    div.style.setProperty('background-image', 'url(' + src + ')')
+    document.body.appendChild(div)
 
     setTimeout(function() {
-      img.classList.remove('fade-in');
-    }, 1000);
-  });
+      div.classList.remove('fade-in')
+    }, 100)
+  })
 }
 
 module.exports = function () {
@@ -127,13 +144,13 @@ module.exports = function () {
         var url = entry.image[0].url[0];
         appendImage(url.split('?')[0] + '?w=' + window.outerWidth);
       }
-    });
+    })
 }
 
 },{"imagesloaded":6,"superagent":9}],3:[function(require,module,exports){
 module.exports={
   "name": "Oblique Strategies Tab",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "manifest_version": 2,
   "description": "A tab replacement based on Oblique Strategies by Brian Eno and Peter Schmidt",
   "homepage_url": "https://github.com/wookiehangover/oblique-tab",

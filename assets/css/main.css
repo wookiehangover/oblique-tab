@@ -19,15 +19,16 @@ html, body {
 
 body {
   font-family: Helvetica, arial, sans;
-  background: var(--light-base);
+  background-color: var(--light-base);
   color: var(--dark-base);
+  background-size: cover;
   margin: 0;
   line-height: 1.5;
-  transition: background var(--bg-transition) ease-in-out;
+  transition: background-image,background-color var(--bg-transition) ease-in-out;
 }
 
 body.dark {
-  background: var(--dark-base);
+  background-color: var(--dark-base);
   color: var(--light-base);
 }
 
@@ -48,17 +49,50 @@ body.dark {
 }
 
 img.bg {
+  visibility: hidden;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0.5;
-  transition: opacity 1s ease-in;
+  /* opacity: 0.5; */
 }
 
-img.bg.fade-in {
+div.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 1s ease-in;
+  background-size: cover;
+}
+
+.bg.fade-in {
   opacity: 0;
+}
+
+.colors {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  left: 25%;
+  bottom: 4em;
+  height: 120px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.colors > div {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+body.big-head .container h1 {
+  font-size: 12em;
+  text-align: left;
 }
 
 @import "icons.css";
