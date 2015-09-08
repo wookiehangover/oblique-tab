@@ -76,16 +76,16 @@ function setUnsplash(resp) {
 }
 
 function setBigHead(resp) {
-  var unsplash = resp['big-head'];
+  var unsplash = resp.bighead;
   var checkbox = document.querySelector('input[name="bighead"]');
 
-  if (unsplash == 'true') {
+  if (unsplash == true) {
     document.body.classList.toggle('big-head')
     checkbox.setAttribute('checked', true);
   }
 
   checkbox.addEventListener('change', function(e) {
-    chrome.storage.sync.set({ 'big-head': e.currentTarget.checked });
+    chrome.storage.sync.set({ 'bighead': e.currentTarget.checked });
     document.body.classList.toggle('big-head')
   }, true);
 }
@@ -112,5 +112,5 @@ document.addEventListener('DOMContentLoaded', function() {
   handleThemeClick();
   handleAboutClick();
   chrome.storage.sync.get('unsplash', setUnsplash);
-  chrome.storage.sync.get('big-head', setBigHead);
+  chrome.storage.sync.get('bighead', setBigHead);
 });

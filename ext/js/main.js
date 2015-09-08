@@ -77,16 +77,16 @@ function setUnsplash(resp) {
 }
 
 function setBigHead(resp) {
-  var unsplash = resp['big-head'];
+  var unsplash = resp.bighead;
   var checkbox = document.querySelector('input[name="bighead"]');
 
-  if (unsplash == 'true') {
+  if (unsplash == true) {
     document.body.classList.toggle('big-head')
     checkbox.setAttribute('checked', true);
   }
 
   checkbox.addEventListener('change', function(e) {
-    chrome.storage.sync.set({ 'big-head': e.currentTarget.checked });
+    chrome.storage.sync.set({ 'bighead': e.currentTarget.checked });
     document.body.classList.toggle('big-head')
   }, true);
 }
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
   handleThemeClick();
   handleAboutClick();
   chrome.storage.sync.get('unsplash', setUnsplash);
-  chrome.storage.sync.get('big-head', setBigHead);
+  chrome.storage.sync.get('bighead', setBigHead);
 });
 
 },{"../../ext/manifest.json":3,"./unsplash-background":2,"oblique-strategies":7}],2:[function(require,module,exports){
@@ -162,7 +162,7 @@ module.exports = function () {
 },{"imagesloaded":6,"superagent":9}],3:[function(require,module,exports){
 module.exports={
   "name": "Oblique Strategies Tab",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "manifest_version": 2,
   "description": "A tab replacement based on Oblique Strategies by Brian Eno and Peter Schmidt",
   "homepage_url": "https://github.com/wookiehangover/oblique-tab",

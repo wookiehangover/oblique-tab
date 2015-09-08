@@ -24,6 +24,9 @@ body {
   background-size: cover;
   margin: 0;
   line-height: 1.5;
+}
+
+body.ready {
   transition: background-image,background-color var(--bg-transition) ease-in-out;
 }
 
@@ -45,6 +48,9 @@ body.dark {
   line-height: 1.4;
   text-align: center;
   max-width: 80%;
+}
+
+body.ready .container h1 {
   transition: color var(--bg-transition) ease-in-out;
 }
 
