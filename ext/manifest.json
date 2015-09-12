@@ -1,6 +1,6 @@
 {
   "name": "Oblique Strategies Tab",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "manifest_version": 2,
   "description": "A tab replacement based on Oblique Strategies by Brian Eno and Peter Schmidt",
   "homepage_url": "https://github.com/wookiehangover/oblique-tab",

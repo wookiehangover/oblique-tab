@@ -136,33 +136,13 @@ function appendImage(src) {
 }
 
 module.exports = function () {
-  request
-    .get('https://unsplash-api.herokuapp.com/')
-    .end(function(err, resp) {
-      var body = resp.body
-      if (err || !(body && body.unsplash) ) {
-        // oh well
-        return;
-      }
-
-      var index = Math.floor(Math.random() * body.unsplash.length);
-      var entry = body.unsplash[index];
-
-      if (entry &&
-          entry.image &&
-          entry.image[0] &&
-          entry.image[0].url) {
-
-        var url = entry.image[0].url[0];
-        appendImage(url.split('?')[0] + '?w=' + window.outerWidth);
-      }
-    })
+  appendImage('https://unsplash.it/' + window.outerWidth + '/' + window.outerHeight + '/?random')
 }
 
 },{"imagesloaded":6,"superagent":9}],3:[function(require,module,exports){
 module.exports={
   "name": "Oblique Strategies Tab",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "manifest_version": 2,
   "description": "A tab replacement based on Oblique Strategies by Brian Eno and Peter Schmidt",
   "homepage_url": "https://github.com/wookiehangover/oblique-tab",
