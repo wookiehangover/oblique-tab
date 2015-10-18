@@ -40,28 +40,24 @@ body.dark {
   height: 100%;
   z-index: 1000;
   position: relative;
+  display: flex;
 }
 
 .container h1 {
   margin: auto;
   font-size: 5rem;
-  line-height: 1.4;
+  line-height: 1;
   text-align: center;
   max-width: 80%;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.25);
+}
+
+body.dark .container h1 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 body.ready .container h1 {
   transition: color var(--bg-transition) ease-in-out;
-}
-
-img.bg {
-  visibility: hidden;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  /* opacity: 0.5; */
 }
 
 div.bg {
@@ -99,6 +95,7 @@ div.bg {
 body.big-head .container h1 {
   font-size: 12em;
   text-align: left;
+  font-weight: 700;
 }
 
 @import "icons.css";
