@@ -40,7 +40,6 @@ body.dark {
   height: 100%;
   z-index: 1000;
   position: relative;
-  display: flex;
 }
 
 .container h1 {
