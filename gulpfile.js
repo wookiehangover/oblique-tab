@@ -31,6 +31,10 @@ function run(command) {
 function generateHTML() {
   var buildPath = options.build === 'chrome' ? 'ext' : '.'
 
+  if (buildPath === 'chrome') {
+    console.log('Building chrome extension')
+  }
+
   return gulp.src('assets/index.html')
     .pipe(preprocess({ context: { build: options.build } }))
     .pipe(smoosher())

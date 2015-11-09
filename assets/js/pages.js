@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.localStorage.setItem('theme', theme)
   })
 
-  var bighead = JSON.parse(localStorage.getItem('big-head'))
-  helpers.setBigHead(bighead, function(checked) {
-    window.localStorage.setItem('big-head', checked)
-  })
-
   var unsplash = JSON.parse(localStorage.getItem('unsplash'))
   helpers.setUnsplash(unsplash, function(checked) {
     window.localStorage.setItem('unsplash', checked)

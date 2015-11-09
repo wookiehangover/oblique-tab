@@ -22,18 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   chrome.storage.sync.get('unsplash', function(resp) {
-    console.log(resp)
     helpers.setUnsplash(resp.unsplash, function(checked) {
       chrome.storage.sync.set({
         unsplash: checked
-      })
-    })
-  })
-
-  chrome.storage.sync.get('bighead', function(resp) {
-    helpers.setUnsplash(resp.bighead, function(checked) {
-      chrome.storage.sync.set({
-        bighead: checked
       })
     })
   })

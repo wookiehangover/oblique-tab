@@ -48,21 +48,6 @@ exports.handleAboutClick = function handleAboutClick() {
   }, false);
 }
 
-exports.setBigHead = function setBigHead(unsplash, cb) {
-  var checkbox = qs('input[name="bighead"]');
-
-  if (unsplash === true) {
-    document.body.classList.toggle('big-head')
-    checkbox.setAttribute('checked', true);
-  }
-
-  checkbox.addEventListener('change', function(e) {
-    document.body.classList.toggle('big-head')
-    if (cb) {
-      cb(e.currentTarget.checked)
-    }
-  }, true)
-}
 
 exports.setUnsplash = function setUnsplash(unsplash, cb) {
   var checkbox = qs('input[name="unsplash"]');

@@ -31,7 +31,7 @@ body.ready {
 }
 
 body.dark {
-  background-color: var(--dark-base);
+  background-color: var(--light-base);
   color: var(--light-base);
 }
 
@@ -44,23 +44,42 @@ body.dark {
 
 .container h1 {
   margin: auto;
-  font-size: 5rem;
-  line-height: 1;
+  font-size: 2rem;
+  line-height: 1.4;
   text-align: center;
-  max-width: 80%;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.25);
+  font-weight: normal;
+
+  width: 26em;
+  height: 15em;
+  border-radius: 1em;
+  padding: 0 2em;
+  box-sizing: border-box;
+  background: var(--light-base);
+  display: flex;
 }
 
-@media (max-width: 500px) {
+.container h1 span {
+  margin: auto;
+}
+
+@media (max-width: 48em) {
   .container h1 {
-    font-size: 4em;
-    text-align: left;
-    width: 100%;
+    font-size: 1.625em;
+    width: 18em;
+    height: 12em;
+  }
+}
+
+@media (max-width: 32em) {
+  .container h1 {
+    font-size: 1.25em;
+    width: 80%;
+    height: 12em;
   }
 }
 
 body.dark .container h1 {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  background: var(--dark-base);
 }
 
 body.ready .container h1 {
