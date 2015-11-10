@@ -1,5 +1,5 @@
 :root {
-  --light-base: #ECEFF1;
+  --light-base: #fff;
   --light-text: #bababa;
   --light-text-hover: #111;
 
@@ -54,7 +54,7 @@ body.dark {
   border-radius: 1em;
   padding: 0 2em;
   box-sizing: border-box;
-  background: var(--light-base);
+  background: rgba(255,255,255,0.9);
   display: flex;
 }
 
