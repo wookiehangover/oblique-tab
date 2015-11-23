@@ -1,6 +1,6 @@
 {
   "name": "oblique-tab",
-  "version": "1.0.0",
+  "version": "2.4.1",
   "dependencies": {
     "autoprefixer": "^6.0.3",
     "browserify": "^11.0.1",

@@ -1,9 +1,9 @@
 :root {
-  --light-base: #fff;
+  --light-base: rgba(255,255,255,0.9);
   --light-text: #bababa;
   --light-text-hover: #111;
 
-  --dark-base: #263238;
+  --dark-base: rgba(38,50,56,0.9);
   --dark-text: #888;
   --dark-text-hover: #eaeaea;
 
@@ -48,13 +48,13 @@ body.dark {
   line-height: 1.4;
   text-align: center;
   font-weight: normal;
-
+  white-space: pre-wrap;
   width: 26em;
   height: 15em;
   border-radius: 1em;
   padding: 0 2em;
   box-sizing: border-box;
-  background: rgba(255,255,255,0.9);
+  background: var(--light-base);
   display: flex;
 }
 
@@ -116,12 +116,6 @@ div.bg {
   width: 100px;
   height: 100px;
   margin: 10px;
-}
-
-body.big-head .container h1 {
-  font-size: 12em;
-  text-align: left;
-  font-weight: 700;
 }
 
 @import "icons.css";
