@@ -20,6 +20,14 @@ self.addEventListener('install', function(event) {
   )
 })
 
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.open('offline').then(function(cache) {
+      return cache.add('index.html')
+    })
+  )
+})
+
 self.addEventListener('fetch', function(event) {
 
   var request = event.request;
