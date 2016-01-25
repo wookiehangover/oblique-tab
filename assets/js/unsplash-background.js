@@ -6,10 +6,7 @@ function appendImage(src) {
   imagesLoaded(img).on('done', function() {
     var bg = document.querySelector('.bg')
     bg.style.setProperty('background-image', 'url(' + src + ')')
-
-    setTimeout(function() {
-      bg.classList.remove('fade-in')
-    }, 100)
+    bg.classList.remove('fade-in')
   })
 }
 
