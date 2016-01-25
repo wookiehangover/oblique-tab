@@ -11,13 +11,27 @@ function cacheBackground(url) {
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    cacheBackground('https://unsplash.it/1920/1200/?random')
+    Promise.all([
+      cacheBackground('https://unsplash.it/1920/1200/?random'),
+      caches.open('offline').then(function(cache) {
+        return cache.add('index.html')
+      })
+    ])
   )
 })
 
 self.addEventListener('fetch', function(event) {
 
   var request = event.request;
+
+  if (request.method === 'GET' && request.url.endsWith('/')) {
+    event.respondWith(
+      caches.open('offline').then(function(cache) {
+        return cache.match('index.html')
+      })
+    )
+  }
+
   if (request.method === 'GET' && request.url.includes('unsplash') ) {
     event.respondWith(
       caches.open('offline').then(function(cache) {
